@@ -36,9 +36,10 @@ public class String
     public void main(String[] args)
     {
         // put your code here
-        int result = name1.compareTo("aaa");
+        String word1, word2
+        int result = word1.compareTo("aaa");
         System.out.println(result);
-        if (name1.equals(name2)){  
+        if (name1.equals(worrd2)){  
             System.out.println("True");
         }
         else 
