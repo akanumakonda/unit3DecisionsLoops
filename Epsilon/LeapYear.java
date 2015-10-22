@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class LeapYear
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private int year;
+    private static int year;
 
     /**
      * Default constructor for objects of class LeapYear
@@ -35,26 +35,25 @@ public class LeapYear
         // put your code here
         Scanner s = new Scanner(System.in);
         System.out.println("Please enter a year: ");
-        year = s.nextInt;
-        this.year = year;
-        
-    }
-
+        year = s.nextInt();
+        year = year;
+        isLeapYear(year);
+    }
     /**
      * An example of a method - replace this comment with your own
      *  that describes the operation of the method
      *
      */
-    public void isLeapYear(int y)
+    public static void isLeapYear(int y)
     {
         // put your code here
         if (((year%4)!= 0) || ((year%100) == 0) && ((year%400) != 0))
         {
-            System.out.println("This is a leap year");
+            System.out.println("This is not a leap year");
         }
         else 
         {
-            System.out.println("This is not a leap year");
+            System.out.println("This is a leap year");
         }
 
     }
