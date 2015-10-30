@@ -8,20 +8,19 @@ public class Substrings_pair
         System.out.println("Please enter a word: ");
         String word = scan.next();
         int numLetters = word.length();
-        /*for (int i = 2;
-            i <= (numLetters );
+        for (int i = 1;
+            i <= (numLetters+ 1);
             i++)
             {
-                for ( int count = 0;
-                    count <= (numLetters);
-                    count++)
+                int count = 0;
+                while ((count + i) <= numLetters)
                     {
-                        String sub = word.substring(count, i);
+                        String sub = word.substring(count, (count +i));
                         System.out.println(sub);
-                    }
-                
-            }*/
-        for(int i = 0; i < word.length(); i++)
+                        count ++;
+                    }                
+            }
+        /*for(int i = 0; i < word.length(); i++)
             {
              char ch = word.charAt(i);
              
@@ -31,6 +30,6 @@ public class Substrings_pair
         {
             System.out.println(ch);
             ch++;
-        }
+        }*/
     }
 }
