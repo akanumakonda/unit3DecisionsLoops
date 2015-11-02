@@ -20,16 +20,5 @@ public class Substrings_pair
                         count ++;
                     }                
             }
-        /*for(int i = 0; i < word.length(); i++)
-            {
-             char ch = word.charAt(i);
-             
-            }
-         
-        while (ch<=numLetters)
-        {
-            System.out.println(ch);
-            ch++;
-        }*/
     }
 }

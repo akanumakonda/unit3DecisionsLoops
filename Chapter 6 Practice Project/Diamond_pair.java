@@ -5,25 +5,26 @@ public class Diamond_pair
     { 
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter an integer: ");
-        int num = scan.nextInt();
-        
+        int num = scan.nextInt();      
         for(int count = 1;
             (count <= num);
-            count +=2)
+            count ++)
+        
         {
-            while (count <= (num + (num-1)) )
-            {
-                System.out.println("*");
-            }
-            for (int spaces = 1;
+            System.out.print("\n");
+            for (int spaces = (count-1);
                 (spaces <= num);
                 spaces++)
                 {
-                    
+                    System.out.print("_");
                 }
-            count++;
+            for(int asterik = 1;
+            asterik <= (count + (count-1));
+            asterik+= 2)
+            {
+                System.out.print("*");
+            }
+            
         }
-        
-        
     }
 }
