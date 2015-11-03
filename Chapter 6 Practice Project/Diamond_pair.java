@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class Diamond_pair
 {
@@ -12,15 +13,35 @@ public class Diamond_pair
         
         {
             System.out.print("\n");
-            for (int spaces = (count-1);
-                (spaces <= num);
+            for (int spaces = (count);
+                (spaces <= (num-1));
                 spaces++)
                 {
-                    System.out.print("_");
+                    System.out.print(" ");
                 }
             for(int asterik = 1;
             asterik <= (count + (count-1));
-            asterik+= 2)
+            asterik++)
+            {
+                System.out.print("*");
+            }
+            
+        }
+        for(int count = num-1;
+            (count >= 1);
+            count --)
+        
+        {
+            System.out.print("\n");
+            for (int spaces = (count);
+                (spaces <= ((num-1)));
+                spaces++)
+                {
+                    System.out.print(" ");
+                }
+            for(int asterik = 1;
+            asterik <= (count + (count-1));
+            asterik++)
             {
                 System.out.print("*");
             }
