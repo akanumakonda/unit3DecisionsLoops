@@ -44,16 +44,16 @@ public class GameOfLifeTest
     public void testInitialState()
     {
         /* expected pattern for initial state
-         *  (X: alive; -: dead)
+         *  (A: alive; -: blank; D: Dead)
          * 
-         *    0 1 2 3 4
-         *  0 - - X - -
-         *  1 - - - - -
-         *  2 X X - - -
-         *  3 - - - - -
-         *  4 - - - - -
-         *  
-         */
+         *    0 1 2 3 4 5 6 7 8
+         *  0 A A D D D D D A A
+         *  1 A A D D A D D A A
+         *  2 D D D A A A D D D
+         *  3 D D D D A D D D D
+         *  4 A A D D D D D A A
+         *  5 A A D D D D D A A
+         */  
         
         GameOfLife game = new GameOfLife();
         final int ROWS = game.getNumRows();
@@ -67,9 +67,27 @@ public class GameOfLifeTest
                 Actor cell = game.getActor(row, col);
 
                 // if the cell at the current row and col should be alive, assert that the actor is not null
-                if(     (row == 0 && col == 2) ||
-                        (row == 2 && col == 0) ||
-                        (row == 2 && col == 1))
+                if(     (row == 0 && col == 0) ||
+                        (row == 0 && col == 1) ||
+                        (row == 0 && col == 5) ||
+                        (row == 0 && col == 6) ||
+                        (row == 1 && col == 0) ||
+                        (row == 1 && col == 1) ||
+                        (row == 1 && col == 7) ||
+                        (row == 1 && col == 8) ||
+                        (row == 1 && col == 3) ||
+                        (row == 2 && col == 2) ||
+                        (row == 2 && col == 3) ||
+                        (row == 2 && col == 4) ||
+                        (row == 3 && col == 3) ||
+                        (row == 5 && col == 0) ||
+                        (row == 5 && col == 1) ||
+                        (row == 5 && col == 6) ||
+                        (row == 4 && col == 0) ||
+                        (row == 4 && col == 1) ||
+                        (row == 4 && col == 7) ||
+                        (row == 4 && col == 8) ||
+                        (row == 5 && col == 6))
                 {
                     assertNotNull("expected alive cell at (" + row + ", " + col + ")", cell);
                 }
@@ -84,10 +102,44 @@ public class GameOfLifeTest
     @Test
     public void testFinalState()
     {
-        /* verify that the actual pattern matches the expected pattern after 3 generations         *  
-         */
+        /* verify that the actual pattern matches the expected pattern after 3 generations
+              0 1 2 3 4 5 6 7 8
+         *  0 A A D D D D D A A
+         *  1 A A D A D A D A A
+         *  2 D D D D D D D D D
+         *  3 D D D A D A D D D
+         *  4 A A D D D D D A A
+         *  5 A A D D D D D A A
+         */  
+
+        GameOfLife game = new GameOfLife();
+        final int ROWS = game.getNumRows();
+        final int COLS = game.getNumCols();
+        for(int row = 0; row < ROWS; row++)
+            {
+                for(int col = 0; col < COLS; col++)
+                {
+                    // in this example, an alive cell has a non-null actor and a dead cell has a null actor
+                Actor cell = game.getActor(row, col);
+
+                    // if the cell at the current row and col should be alive, assert that the actor is not null
+                if(     (row == 0 && col == 0) ||
+                        (row == 0 && col == 1) ||
+                        (row == 0 && col == 5) ||
+                        (row == 0 && col == 6)  
+                        )
+                         {
+                          assertNotNull("expected alive cell at (" + row + ", " + col + ")", cell);
+                        }
+                else // else, the cell should be dead; assert that the actor is null
+                {
+                   assertNull("expected dead cell at (" + row + ", " + col + ")", cell);
+                }
         
-        // ...
-    }
-}
+                            // ...
+                        
+                        }
+                    }
+                }
+            }
 

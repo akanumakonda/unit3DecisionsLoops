@@ -19,7 +19,7 @@ public class GameOfLife
     
     // the game board will have 5 rows and 5 columns
     private final int ROWS = 5;
-    private final int COLS = 5;
+    private final int COLS = 6;
     
     /**
      * Default constructor for objects of class GameOfLife
@@ -53,7 +53,7 @@ public class GameOfLife
     private void populateGame()
     {
         // constants for the location of the three cells initially alive
-        final int X1 = 2, Y1 = 0;
+        final int X1 = 2, Y1 = 1;
         final int X2 = 0, Y2 = 2;
         final int X3 = 1, Y3 = 2;
 
