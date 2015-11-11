@@ -174,28 +174,40 @@ public class GameOfLife
      * @post    the world has been populated with a new grid containing the next generation
      * 
      */
-    private void createNextGeneration()
+    public void createNextGeneration()
     {
         /** You will need to read the documentation for the World, Grid, and Location classes
          *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
          */
         
-        // create the grid, of the specified size, that contains Actors
-        Grid<Actor> grid = world.getGrid();
-        for (int r = 1;
+    // create the grid, of the specified size, that contains Actors
+    Grid<Actor> grid = world.getGrid();
+    ArrayList<Location> live = new ArrayList();
+    for (int r = 1;
             r <= 7;
             r++)
-            {
-                for (int c = 1;
-                    c<=9;
-                    c++)
-                    {
-               int c = 1;
-                f
-       
-        // insert magic here...
-        
-    }
+         {
+          for (int c = 1;
+               c<=9;
+               c++)
+              {
+                ArrayList<Location> numlive = new ArrayList(grid.getOccupiedAdjacentlocations(c,r));    
+                if ((numlive < 3) && (grid.get(c,r) != null) )
+                {
+                  live.add(c,r);
+                }
+                if (((numlive ==2) || (numlive == 3)) && (grid.get(c,r) != null))
+                {
+                  live.add(c,r);
+                }
+                /*if ((numlive ==3) && (grid.get(c,r) == null))
+                {
+                  die.add(column,row);
+                }
+                */
+                }
+        }
+    for (Location location: live)
     
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
