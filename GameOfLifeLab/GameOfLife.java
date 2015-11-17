@@ -197,7 +197,7 @@ public class GameOfLife
               {
                 Location location = new Location(r , c);
                 ArrayList<Location> numlive = grid.getOccupiedAdjacentLocations(location);    
-                if ((numlive.size() < 2) && (numlive.size() > 3) && (this.getActor(r,c) != null) )
+                if ((numlive.size() < 2) || (numlive.size() > 3) && (this.getActor(r,c) != null) )
                 {
                     Location loc = new Location (r , c);
                     dead.add(loc);
@@ -223,6 +223,7 @@ public class GameOfLife
     {
         grid.remove(location);
     }
+    world.show();
 }
          
     
@@ -270,7 +271,7 @@ public class GameOfLife
     {
         GameOfLife game = new GameOfLife();
         for (int i = 0;
-        i < 2;
+        i <= 2;
         i++)
         {
             Thread.sleep(3000);
@@ -279,4 +280,4 @@ public class GameOfLife
         }
     }
 
-}
+
