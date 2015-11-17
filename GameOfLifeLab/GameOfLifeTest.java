@@ -119,6 +119,12 @@ public class GameOfLifeTest
          */  
 
         GameOfLife game = new GameOfLife();
+        for (int i = 1;
+        i <= 2;
+        i++)
+        {
+            game.createNextGeneration();
+        }
         final int ROWS = game.getNumRows();
         final int COLS = game.getNumCols();
         for(int row = 0; row < ROWS; row++)
@@ -130,24 +136,21 @@ public class GameOfLifeTest
 
                     // if the cell at the current row and col should be alive, assert that the actor is not null
                 if(     (row == 1 && col == 0) ||
-                        (row == 1 && col == 1) ||
-                        (row == 1 && col == 7) ||
+                        (row == 1 && col == 4) ||
                         (row == 1 && col == 8) ||
-                        (row == 2 && col == 3) ||
-                        (row == 2 && col == 5) ||
-                        (row == 4 && col == 3) ||
+                        (row == 2 && col == 4) ||
+                        (row == 3 && col == 1) ||
                         (row == 4 && col == 5) ||
                         (row == 0 && col == 0) ||
-                        (row == 0 && col == 1) ||
-                        (row == 0 && col == 7) ||
+                        (row == 0 && col == 2) ||
+                        (row == 0 && col == 6) ||
                         (row == 0 && col == 8) ||
                         (row == 5 && col == 0) ||
-                        (row == 5 && col == 1) ||
-                        (row == 5 && col == 7) ||
+                        (row == 5 && col == 4) ||
                         (row == 5 && col == 8) ||
                         (row == 6 && col == 0) ||
-                        (row == 6 && col == 1) ||
-                        (row == 6 && col == 7) ||
+                        (row == 6 && col == 2) ||
+                        (row == 6 && col == 6) ||
                         (row == 6 && col == 8)
                         )
                 {
