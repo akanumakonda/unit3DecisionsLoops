@@ -4,6 +4,9 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
+import java.util.ArrayList;
+
+
 
 /**
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
@@ -182,32 +185,46 @@ public class GameOfLife
         
     // create the grid, of the specified size, that contains Actors
     Grid<Actor> grid = world.getGrid();
-    ArrayList<Location> live = new ArrayList();
-    for (int r = 1;
-            r <= 7;
+    ArrayList<Location>live = new ArrayList<Location>();
+    ArrayList<Location> dead = new ArrayList<Location>();
+    for (int r = 0;
+            r < 7;
             r++)
          {
-          for (int c = 1;
-               c<=9;
+          for (int c = 0;
+               c < 9;
                c++)
               {
-                ArrayList<Location> numlive = new ArrayList(grid.getOccupiedAdjacentlocations(c,r));    
-                if ((numlive < 3) && (grid.get(c,r) != null) )
+                Location location = new Location(r , c);
+                ArrayList<Location> numlive = grid.getOccupiedAdjacentLocations(location);    
+                if ((numlive.size() < 2) && (numlive.size() > 3) && (this.getActor(r,c) != null) )
                 {
-                  live.add(c,r);
+                    Location loc = new Location (r , c);
+                    dead.add(loc);
                 }
-                if (((numlive ==2) || (numlive == 3)) && (grid.get(c,r) != null))
+                if (((numlive.size() ==2) || (numlive.size() == 3)) && (this.getActor(r,c) != null))
                 {
-                  live.add(c,r);
+                    Location loc = new Location (r , c);
+                    live.add(loc);
                 }
-                /*if ((numlive ==3) && (grid.get(c,r) == null))
+                if ((numlive.size() ==3) && (this.getActor(r,c) == null))
                 {
-                  die.add(column,row);
+                    Location loc = new Location (r , c);
+                    live.add(loc);
                 }
-                */
-                }
+                }   
         }
     for (Location location: live)
+    {
+        Rock roc = new Rock();
+        grid.put(location, roc);
+    }
+    for (Location location: dead)
+    {
+        grid.remove(location);
+    }
+}
+         
     
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
