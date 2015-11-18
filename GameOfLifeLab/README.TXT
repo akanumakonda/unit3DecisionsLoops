@@ -38,6 +38,15 @@ Nonfunctional Requirements:
 * I recommend not use GridWorld’s execution engine to produce subsequent
 	generations. It will be easier to implement the unit test if you directly
 	produce and display subsequent generations.
+	
+*Requirements:
+*The grid is 9 x 8, and does not wrap around
+*The living cells are black holes, while the dead cells are blank white squares
+*The pattern is chosen by code, and starts as a flower and acts like an explosion, expanding outward. 
+*The program runs for 4 generations, and is not reliant on user prompts
+*There is a 3 second intereval between the generations
+
+*
 
 
 Artifacts to Produce:
