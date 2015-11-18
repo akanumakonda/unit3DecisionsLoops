@@ -107,13 +107,13 @@ public class GameOfLifeTest
         /* verify that the actual pattern matches the expected pattern after 3 generations
          *  
          *    0 1 2 3 4 5 6 7 8
-         *  0 A A D D D D D A A
-         *  1 A A D D D D D A A
-         *  2 D D D A D A D D D
-         *  3 D D D D D D D D D
-         *  4 D D D A D A D D D
-         *  5 A A D D D D D A A
-         *  6 A A D D D D D A A
+         *  0 A D A D D D A D A
+         *  1 A D D D A D D D A
+         *  2 D D D D A D D D D
+         *  3 D A D D D D D A D
+         *  4 D D D D A D D D D
+         *  5 A D D D A D D D A
+         *  6 A D A D D D A D A
 
          *  
          */  
@@ -140,7 +140,8 @@ public class GameOfLifeTest
                         (row == 1 && col == 8) ||
                         (row == 2 && col == 4) ||
                         (row == 3 && col == 1) ||
-                        (row == 4 && col == 5) ||
+                        (row == 3 && col == 7) ||
+                        (row == 4 && col == 4) ||
                         (row == 0 && col == 0) ||
                         (row == 0 && col == 2) ||
                         (row == 0 && col == 6) ||
