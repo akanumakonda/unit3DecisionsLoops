@@ -43,7 +43,7 @@ Nonfunctional Requirements:
 *The grid is 8 x 6, and does not wrap around
 *The living cells are black holes, while the dead cells are blank white squares
 *The pattern is chosen by code, and starts as a flower and acts like an explosion, expanding outward. 
-*The program runs for 4 generations, and is not reliant on user prompts
+*The program runs for 3 generations, and is not reliant on user prompts
 *There is a 3 second intereval between the generations
 
 *
